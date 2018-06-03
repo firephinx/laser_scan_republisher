@@ -1,9 +1,9 @@
 #include "laser_scan_republisher/laser_scan_republisher.h"
 
-LaserScanRepublisher::LaserScanRepublisher() : nh_()
+LaserScanRepublisher::LaserScanRepublisher() : nh_("/laser_scan_republisher")
 {
-    nh_.param("/laser_scan_republisher/laser_scan_input_topic_name", laser_scan_input_topic_name_, std::string("/scan"));
-    nh_.param("/laser_scan_republisher/laser_scan_output_topic_name", laser_scan_output_topic_name_, std::string("/laser_scan_republisher/scan"));
+    nh_.param("laser_scan_input_topic_name", laser_scan_input_topic_name_, std::string("/scan"));
+    nh_.param("laser_scan_output_topic_name", laser_scan_output_topic_name_, std::string("/laser_scan_republisher/scan"));
 
     laser_scan_publisher_ = nh_.advertise<sensor_msgs::LaserScan>(laser_scan_output_topic_name_, 1);
     laser_scan_subscriber_ = nh_.subscribe(laser_scan_input_topic_name_, 1, &LaserScanRepublisher::laserScanCallback, this);
