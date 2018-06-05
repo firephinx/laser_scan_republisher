@@ -8,8 +8,6 @@ class LaserScanRepublisher
 {
     private:
         ros::NodeHandle nh_;
-        std::string laser_scan_input_topic_name_;
-        std::string laser_scan_output_topic_name_;
 
         ros::Subscriber laser_scan_subscriber_;
         ros::Publisher laser_scan_publisher_;

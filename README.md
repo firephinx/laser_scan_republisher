@@ -1,6 +1,6 @@
 # laser_scan_republisher
 
-This ros package is used for republishing a laser_scan topic locally.
+This ros package is used for republishing a LaserScan topic locally.
 
 ## Configuration Instructions
 1. Modify the topic name parameters in the launch/laser_scan_republisher.launch file to your liking.
