@@ -3,6 +3,7 @@
   <node pkg="laser_scan_republisher" type="laser_scan_republisher_node" name="laser_scan_republisher_node" output="screen">
     <param name="input_laser_scan_topic_name"   value="/scan" />
     <param name="output_laser_scan_topic_name"  value="/laser_scan_republisher/scan" />
+    <param name="output_laser_scan_frame_id_name"	value="" />
   </node>
 
 </launch>
